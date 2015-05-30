@@ -1,0 +1,21 @@
+---------------------------OVERVIEW--------------------------
+1. startup.ino-Basic control for motors of iRobot
+
+---------------------------GUILDLINE-------------------------
+For everyone in this project, doc format is here:
+date
+{
+	For someone in this project - title
+	TODO: what is your current task
+	ISSIUE: issiues need to be discussed
+}
+
+---------------------------TASK LIST-------------------------
+5/30
+For mopplayer - Startup
+Basic contorl code for Arduino UNO.
+This is may not be required in final state.
+ISSIUE:
+for Bananapi, it needs at last 4 PWM output pins,
+2x4 digital output pins, 4 TX/RX pins of the sensors.
+
