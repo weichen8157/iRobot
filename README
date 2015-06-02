@@ -1,6 +1,7 @@
 ---------------------------OVERVIEW--------------------------
 1. startup.ino-Basic control for motors of iRobot
-
+2. map.h-Basic data structure for map and car and other functions
+3. map-Simulated map
 ---------------------------GUIDELINE-------------------------
 For everyone in this project, doc format is here:
 date
@@ -18,4 +19,3 @@ This may not be required in final state.
 ISSIUE:
 for Bananapi, it needs at last 4 PWM output pins,
 2x4 digital output pins, 4 TX/RX pins of the sensors.
-
