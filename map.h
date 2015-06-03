@@ -24,7 +24,10 @@ COL *col;
 CAR car;
 
 void init();
-
+void detect();
+void updatemap();
+void planpath();
+void move();
 
 void init(){
     car.x=0;

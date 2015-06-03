@@ -1,7 +1,8 @@
 ---------------------------OVERVIEW--------------------------
 1. startup.ino-Basic control for motors of iRobot
-2. map.h-Basic data structure for map and car and other functions
-3. map-Simulated map
+2. map.h      -Basic data structure for map and car and other functions
+              -detect,updatemap,planpath,move
+3. map        -Simulated map
 ---------------------------GUIDELINE-------------------------
 For everyone in this project, doc format is here:
 date
