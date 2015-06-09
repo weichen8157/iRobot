@@ -12,7 +12,8 @@ struct CAR{
     volatile float y;
     const float sizeX;// car size
     const float sizeY;
-    int mode;          // running mode,0:first run
+    char mode;          // running mode,0:first run
+    char direction; // 0:North 1:East 2:South 3:West
 };
 
 typedef struct{
@@ -29,14 +30,47 @@ void updatemap();
 void planpath();
 void move();
 
+int map[32][32];
+
 void init(){
-    car.x=0;
-    car.y=0;
+    car.x=1;
+    car.y=1;
     sizeX=0.4;
     sizeY=0.4;
     mode=0;
     col = (COL*)malloc(sizeof(COL)*256);
     col[0].row = (char*)calloc(256,sizeof(char));
-    col[0].row[0]=FREE;
+    col[1].row[1]=FREE;
     col[0].fill=1;
+    car.direction = 0;
+    int i,j;
+    for(i=0;i<32;i++){
+        for(j=0;j<32;j++){
+            map[i][j] = FREE;
+            if(j==0||i==0||i==31||j==31||(5 < j && j < 15 && 0<=i && i<=10)||(9<=j && j<=10 && 13<=i && i<=31)||(26<=j && j<=30 && 23<=i && i<=30))
+                map[i][j] = OBSTACLE; 
+        }
+    }
 }
+
+
+void planpath(){
+    if(car.direction == 0) { //N
+        if(col[car.x].row[car.y+1] != FREE) {
+            car.direction++; //N to E   
+        }
+    }
+    else if(car.direction == 2) { //S
+        if(col[car.x].row[car.y-1] != FREE) {
+            car.direction--; //S to E       
+        }   
+    }
+    else if(car.direction == 1) { //E
+        if( (col[car.x].row[car.y+1] != FREE) && (col[car.x].row[car.y-1] == FREE) ) 
+            car.direction++; //E to S
+        else if ( (col[car.x].row[car.y-1] != FREE) && (col[car.x].row[car.y+1] == FREE) )
+            car.direction--; //E to N    
+    }    
+    
+
+}    
