@@ -19,3 +19,12 @@ ISSIUE:
 for Bananapi, it needs at last 4 PWM output pins,
 2x4 digital output pins, 4 TX/RX pins of the sensors.
 
+6/10
+For mopplayer - 4 motors
+Basic control code for 4 motors
+ISSIUE:
+Would sensors interact with arduino or bananapi?
+If it is arduino, it will need more pins for 4 RX/TX 
+or 4 digital in/output , so UNO=>Mega2560.
+If it is bananapi, it will need 4 RX/TX or 4 digital in/output
+, so still use UNO.

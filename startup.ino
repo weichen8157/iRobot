@@ -1,11 +1,19 @@
-const byte IN1 = 3;		// Motor A
-const byte IN2 = 4;
-const byte ENA = 5;		
+const byte IN1 = 0;		// Motor A
+const byte IN2 = 1;
+const byte ENA = 2;		
  
-const byte IN3 = 7;		// Motor B
-const byte IN4 = 8;
-const byte ENB = 6;		
- 
+const byte IN3 = 3;		// Motor B
+const byte IN4 = 4;
+const byte ENB = 5;		
+
+const byte IN5 = 6;		// Motor C	
+const byte IN6 = 7;
+const byte ENC = 8;	
+
+const byte IN7 = 9;		// Motor D
+const byte IN8 = 10;
+const byte END = 11;	
+
 int speed;			
  
 void setup() {
@@ -17,12 +25,22 @@ void setup() {
   pinMode(IN4, OUTPUT);
   pinMode(ENB, OUTPUT);
  
+  pinMode(IN5, OUTPUT);
+  pinMode(IN6, OUTPUT);
+  pinMode(ENC, OUTPUT);
+ 
+  pinMode(IN7, OUTPUT);
+  pinMode(IN8, OUTPUT);
+  pinMode(END, OUTPUT);
+  
   speed = 100; 
 }
 
 void loop() {
   analogWrite(ENA, speed);	//PWM	
-  analogWrite(ENB, speed);		
+  analogWrite(ENB, speed);
+  analogWrite(ENC, speed);	//PWM	
+  analogWrite(END, speed);				
  
   forward(); 		
   delay(5000);		
@@ -47,7 +65,11 @@ void forward()
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, LOW);	
+    digitalWrite(IN4, LOW);
+    digitalWrite(IN5, HIGH);
+    digitalWrite(IN6, LOW);
+    digitalWrite(IN7, HIGH);
+    digitalWrite(IN8, LOW);   	
 }
  
 void backward()
@@ -55,7 +77,11 @@ void backward()
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, LOW);
-    digitalWrite(IN4, HIGH);	
+    digitalWrite(IN4, HIGH);
+    digitalWrite(IN5, LOW);
+    digitalWrite(IN6, HIGH);
+    digitalWrite(IN7, LOW);
+    digitalWrite(IN8, HIGH);    	
 }
  
 void turnLeft()
@@ -64,6 +90,10 @@ void turnLeft()
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, LOW);	
+    digitalWrite(IN7, HIGH);
+    digitalWrite(IN8, LOW);
+    digitalWrite(IN5, LOW);
+    digitalWrite(IN6, LOW);    
 }
  
 void turnRight()
@@ -72,6 +102,10 @@ void turnRight()
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
+    digitalWrite(IN7, LOW);
+    digitalWrite(IN8, LOW);
+    digitalWrite(IN5, HIGH);
+    digitalWrite(IN6, LOW);   
 }
  
 void stop()
@@ -80,4 +114,8 @@ void stop()
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, LOW);
+    digitalWrite(IN5, LOW);
+    digitalWrite(IN6, LOW);
+    digitalWrite(IN7, LOW);
+    digitalWrite(IN8, LOW);    
 }
