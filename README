@@ -1,6 +1,6 @@
 ---------------------------OVERVIEW--------------------------
 1. startup.ino-Basic control for motors of iRobot
-
+2. test.c-Distance analysis code for bananapi
 ---------------------------GUIDELINE-------------------------
 For everyone in this project, doc format is here:
 date
@@ -28,3 +28,12 @@ If it is arduino, it will need more pins for 4 RX/TX
 or 4 digital in/output , so UNO=>Mega2560.
 If it is bananapi, it will need 4 RX/TX or 4 digital in/output
 , so still use UNO.
+
+6/14
+For mopplayer - Test code for distance
+Using WiringC lib for bananapi.
+Later, I will combine to control motors.
+ISSIUE:
+The distance is sometimes to lead 0.
+It seem some errors on system.
+
