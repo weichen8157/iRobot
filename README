@@ -1,6 +1,7 @@
 ---------------------------OVERVIEW--------------------------
 1. startup.ino-Basic control for motors of iRobot
 2. test.c-Distance analysis code for bananapi
+3. test.sh-run the test
 ---------------------------GUIDELINE-------------------------
 For everyone in this project, doc format is here:
 date
@@ -36,4 +37,12 @@ Later, I will combine to control motors.
 ISSIUE:
 The distance is sometimes to lead 0.
 It seem some errors on system.
+
+6/15
+For mopplayer - combine arduino to bananapi
+Done.
+Beta version release.
+ISSIUE:
+The current overhead will damage the board.
+Using two port to supply the power.
 
