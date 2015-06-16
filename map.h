@@ -73,4 +73,34 @@ void planpath(){
     }    
     
 
-}    
+}  
+
+void detect(){	
+   	
+		for(i=car.y;i>0;i--){
+			if(col[car.x].row[i]==O)	SouthO=car.y-col[car.x].row[i];
+			break;
+		}
+		for(i=car.x;i<32;i++){
+			if(col[i]==O)			EastO=col[i]-car.x;
+			break;
+		}
+		for(i=car.x;i>0;i--){
+			if(col[i]==0)			WestO=car.x-col[i];
+			break;
+		}
+	
+		for(i=car.y;i<32;i++){
+			if(col[car.x].row[i]==O)	NorthO=col[car.x].row[i]-car.y;
+			break;
+		}
+	
+	
+	if(car.direction==0){
+		dis=NorthO;
+	}
+
+	if(car.direction==2){
+		dis=SouthO;
+	}
+}
